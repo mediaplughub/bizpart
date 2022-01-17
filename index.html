@@ -1,0 +1,47 @@
+카카오 API 소스
+
+
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('6f38df4edfa3cc98ee86516d89ba6ffc');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '노란우산공제 가입안내',
+        description: '쉽고 빠르게 노란우산에 가입하는 방법입니다.',
+        imageUrl:
+          'https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg1.daumcdn.net%2Fthumb%2FR800x0%2F%3Fscode%3Dmtistory2%26fname%3Dhttps%253A%252F%252Fblog.kakaocdn.net%252Fdn%252FdLvcrG%252FbtqMgtCC3ZM%252FtSx6hK99LyksW56vx1yS80%252Fimg.jpg&imgrefurl=https%3A%2F%2Frogorogo.tistory.com%2F1615&tbnid=-5HKuFMikM3zxM&vet=12ahUKEwi75O_R7Lj1AhWW4GEKHewvCvwQMygEegUIARDDAQ..i&docid=PlvtiiZo_N4IZM&w=800&h=301&itg=1&q=%EB%85%B8%EB%9E%80%EC%9A%B0%EC%82%B0&ved=2ahUKEwi75O_R7Lj1AhWW4GEKHewvCvwQMygEegUIARDDAQ',
+        link: {
+          mobileWebUrl: 'http://www.koreabizcenter.co.kr',
+          webUrl: 'http://www.koreabizcenter.co.kr',
+        },
+      },
+   
+      buttons: [
+        {
+          title: '자세히 보기',
+          link: {
+            mobileWebUrl: 'http://www.koreabizcenter.co.kr',
+            webUrl: 'http://www.koreabizcenter.co.kr',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
